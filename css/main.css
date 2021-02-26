@@ -1,0 +1,249 @@
+/* import fonts : Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --body-font: "Poppins", sans-serif;
+  --body-font-size: 16px;
+  --red-color: #ff7a7a;
+  --green-color: #38cc8c;
+  --blue-color: #6055a5;
+  --dark-blue: #3e3c49;
+  --grayish-blue: #b9b6d3;
+  --white-color: #fff;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--body-font-size);
+  font-family: var(--body-font);
+}
+
+body {
+  background: var(--red-color) url(../images/bg-intro-mobile.png) no-repeat
+    top/cover;
+  height: 1000px;
+}
+
+.container {
+  width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+/* Intro */
+
+#intro {
+  padding: 7rem 0;
+}
+
+.intro-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.section-left h1.intro-heading {
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--white-color);
+}
+
+.section-left p.intro-description {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--white-color);
+  line-height: 1.8;
+  margin: 3rem 0;
+}
+
+.section-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info {
+  color: var(--white-color);
+  background-color: var(--blue-color);
+  padding: 1rem 0;
+  width: 100%;
+  text-align: center;
+  border-radius: 0.6rem;
+  margin-bottom: 2rem;
+  box-shadow: -1px 10px 0px -2px rgba(0, 0, 0, 0.13);
+  -webkit-box-shadow: -1px 10px 0px -2px rgba(0, 0, 0, 0.13);
+  -moz-box-shadow: -1px 10px 0px -2px rgba(0, 0, 0, 0.13);
+}
+
+.info .info-text strong {
+  font-weight: 600;
+}
+
+.info .info-text {
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.form-container {
+  background-color: var(--white-color);
+  padding: 1.5rem;
+  border-radius: 0.6rem;
+  box-shadow: -1px 10px 0px -2px rgba(0, 0, 0, 0.13);
+  -webkit-box-shadow: -1px 10px 0px -2px rgba(0, 0, 0, 0.13);
+  -moz-box-shadow: -1px 10px 0px -2px rgba(0, 0, 0, 0.13);
+  width: 100%;
+}
+.form-group {
+  position: relative;
+}
+.form-group,
+.form-control,
+button[type="submit"] {
+  width: 100%;
+}
+
+.form-control {
+  border: 2px solid #d6cfcf;
+  outline: 0;
+  padding: 1rem 1.3rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  font-family: var(--body-font);
+  font-weight: 600;
+  transition: border 0.2s linear;
+}
+
+.form-control:focus {
+  border: 2px solid var(--blue-color);
+}
+
+.form-control::placeholder {
+  color: var(--dark-blue);
+  opacity: 0.7;
+  font-weight: 600;
+}
+
+.btn-submit {
+  padding: 1rem 1.3rem;
+  border: 0;
+  border-bottom: 5px solid #36b67e;
+  outline: 0;
+  background-color: var(--green-color);
+  color: var(--white-color);
+  font-family: var(--body-font);
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: 0.5s;
+  margin-top: 15px;
+}
+.btn-submit:hover {
+  opacity: 0.7;
+}
+/* Validation */
+.error-icon {
+  position: absolute;
+  top: 1.3rem;
+  right: 1.7rem;
+  display: none;
+}
+
+.form-control.error {
+  border: 2px solid var(--red-color);
+  color: var(--red-color);
+  transition: 0.4s;
+}
+.form-control.error + .error-icon {
+  display: block;
+}
+
+.error-message {
+  color: var(--red-color);
+  position: absolute;
+  right: 0;
+  bottom: 0.6rem;
+  font-size: 0.8rem;
+  font-style: italic;
+  transition: 0.4s;
+  font-weight: 600;
+}
+/* Form bottom paragraph */
+
+form + p {
+  color: var(--grayish-blue);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  width: 80%;
+  margin: 20px auto 0;
+  line-height: 1.8;
+}
+form + p .terms {
+  color: var(--red-color);
+}
+
+@media screen and (max-width: 300px) {
+  .info .info-text {
+    font-size: 0.9rem;
+  }
+
+  .form-container {
+    padding: 1rem;
+  }
+
+  .form-control {
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+  }
+
+  .btn-submit {
+    font-size: 1rem;
+  }
+
+  form + p {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  body {
+    background: var(--red-color) url(../images/bg-intro-desktop.png);
+  }
+
+  .intro-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .section-left,
+  .section-right {
+    width: 45%;
+  }
+
+  .section-left {
+    align-items: stretch;
+    justify-content: center;
+  }
+
+  .section-left h1.intro-heading,
+  .section-left p.intro-description {
+    text-align: left;
+  }
+
+  .section-left h1.intro-heading {
+    font-size: 3rem;
+  }
+}
